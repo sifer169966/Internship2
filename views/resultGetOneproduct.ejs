@@ -1,0 +1,41 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+        <body>
+            <h1>GET ONE PRODUCT SUCCESSFULLY</h1>
+                <form method="POST">
+                    ID:<br> <input name="id" value=<%=products.id%> disabled ><br>            
+                    Product-Name:<br> <input name="product" value=<%=products.product%> disabled>&nbsp;<button type="button" id="productid" onclick="return enabledProductInput()">edit</button><br> 
+                    Price:<br> <input name="price" value=<%=products.price%> disabled>&nbsp;<button type="button" name="price" onclick="return enabledPriceInput()">edit</button><br>   
+                    <p>
+                    <input type="submit" onclick="this.form.action='/store/<%=products.id%>?_method=PUT'" value="update product">&nbsp;&nbsp;
+                    <input type="submit" onclick="this.form.action='/store/<%=products.id%>?_method=DELETE'" value="delete product">
+                    </p>     
+                </form> <br>
+                    <ul>
+                        <li>
+                            PRODUCT =&nbsp;&nbsp;<%= products.product %>
+                            <br><br>
+                            PRICE =&nbsp;&nbsp;<%= products.price %>
+                            <br><br>
+                            <a href="/store">Back to entranc Store</a>
+                        </li>
+                    </ul>
+            <script>
+                function enabledProductInput(){
+                    $("input[name='product']").removeAttr('disabled')
+               }
+
+               function enabledPriceInput(){
+                   $("input[name='price']").removeAttr('disabled')
+               }
+            </script>
+           
+        </body>
+</html>
