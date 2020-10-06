@@ -11,7 +11,7 @@ require('dotenv/config')
 /*===================================================================================== */
 /*                                  MIDDLEWARES                                         */
 /*===================================================================================== */
-app.use(cors())//fetch cross domain
+app.use(cors())
 app.use(logger('dev'))
 app.use(methodOverride('_method'));
 app.use(methodOverride('X-HTTP-Method-Override'));
